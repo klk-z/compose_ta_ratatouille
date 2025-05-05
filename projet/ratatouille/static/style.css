@@ -1,0 +1,103 @@
+/* ---- Polices modernes ---- */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #fffaf5;
+    color: #2c3e50;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---- Bannière ---- */
+.banniere {
+    background-color: #e67e22;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+/* ---- Liens ---- */
+a {
+    color: #e67e22;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* ---- Boutons ---- */
+button {
+    background-color: #27ae60;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+button:hover {
+    background-color: #219150;
+}
+
+/* ---- Formulaire ---- */
+form {
+    max-width: 600px;
+    margin: auto;
+    background: #fdf2e9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+}
+input[type="text"],
+input[type="number"],
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+/* ---- Encadré de confirmation ou contenu ---- */
+.box {
+    background: #fdf2e9;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 700px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* ---- Tableaux ---- */
+table {
+    margin: auto;
+    border-collapse: collapse;
+    width: 90%;
+    background-color: white;
+}
+th, td {
+    border-bottom: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+th {
+    background-color: #fae5d3;
+}
+
+/* ---- Titres ---- */
+h1, h2 {
+    text-align: center;
+    color: #c0392b;
+}

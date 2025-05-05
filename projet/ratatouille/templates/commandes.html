@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Commandes enregistrées</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="banniere">
+    <h1>🍲 Commandes enregistrées</h1>
+  </div>
+
+  {% if commandes %}
+  <div class="box">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Ingrédients</th>
+          <th>Cuisson</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for id, ingredients, cuisson in commandes %}
+        <tr>
+          <td>{{ id }}</td>
+          <td>
+            {% for ing in ingredients.split(', ') %}
+              {{ ajouter_emoji(ing, EMOJIS_INGREDIENTS) }}<br />
+            {% endfor %}
+          </td>
+          <td>{{ ajouter_emoji(cuisson, EMOJIS_CUISSONS) }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+  <p style="text-align: center;">Aucune commande enregistrée.</p>
+  {% endif %}
+
+  <div style="text-align:center; margin-top: 30px;">
+    <a href="/">Retour à l'accueil</a>
+  </div>
+</body>
+</html>

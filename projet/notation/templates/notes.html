@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Notes attribuées</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="banniere">
+    <h1>⭐ Notes des commandes</h1>
+  </div>
+
+  {% if notes %}
+  <div class="box">
+    <table>
+      <thead>
+        <tr>
+          <th>ID de commande</th>
+          <th>Note</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for commande_id, note in notes %}
+        <tr>
+          <td>{{ commande_id }}</td>
+          <td>
+            {% for i in range(note|int) %}
+              ★
+            {% endfor %}
+            {% for i in range(5 - note|int) %}
+              ☆
+            {% endfor %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+    <p style="text-align: center;">Aucune note enregistrée.</p>
+  {% endif %}
+
+  <div style="text-align: center; margin-top: 20px;">
+    <a href="/notation/note"><button>Noter une autre commande</button></a>
+  </div>
+</body>
+</html>

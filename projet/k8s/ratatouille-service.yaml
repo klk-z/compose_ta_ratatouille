@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ratatouille-service
+spec:
+  selector:
+    app: ratatouille
+  ports:
+  - protocol: TCP
+    port: 80           # 👈 important : ce port est utilisé par l'ingress
+    targetPort: 5000

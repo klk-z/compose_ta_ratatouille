@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Commande confirmée</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="banniere">
+    <h1>🍲 Compose ta ratatouille maison !</h1>
+  </div>
+
+  <div class="box">
+    <p><strong>ID de commande :</strong> {{ id }}</p>
+
+    <h2>Ingrédients sélectionnés :</h2>
+    <ul>
+      {% for ing in ingredients %}
+        <li>{{ ajouter_emoji(ing, EMOJIS_INGREDIENTS) }}</li>
+      {% endfor %}
+    </ul>
+
+    <h2>Cuisson choisie :</h2>
+    <p>{{ ajouter_emoji(cuisson, EMOJIS_CUISSONS) }}</p>
+
+    <p style="text-align:center;">
+      <a href="http://127.0.0.1/notation/note?commande_id={{ id }}">
+        <button>Noter cette commande</button>
+      </a>
+    </p>
+
+    <div style="text-align:center;">
+      <a href="/">Retour à l'accueil</a>
+    </div>
+  </div>
+</body>
+</html>

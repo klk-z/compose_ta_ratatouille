@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: notation-ingress
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /notation
+            pathType: Prefix
+            backend:
+              service:
+                name: notation-service
+                port:
+                  number: 80

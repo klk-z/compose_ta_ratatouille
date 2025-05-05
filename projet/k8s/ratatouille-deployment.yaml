@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ratatouille
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ratatouille
+  template:
+    metadata:
+      labels:
+        app: ratatouille
+    spec:
+      containers:
+        - name: flask
+          image: klkz/ratatouille:v7
+          ports:
+            - containerPort: 5000
+          volumeMounts:
+            - name: data-volume
+              mountPath: /data   # où l'app écrit commandes.db
+      volumes:
+        - name: data-volume
+          emptyDir: {}

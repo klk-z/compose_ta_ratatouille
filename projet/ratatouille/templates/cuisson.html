@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Choisir la cuisson</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="banniere">
+    <h1>🍲 Compose ta ratatouille maison !</h1>
+  </div>
+
+  {% if erreur %}
+  <p style="color:red; text-align:center;">{{ erreur }}</p>
+  {% endif %}
+
+  <form method="POST" action="/cuisson" class="box">
+    {% for ing in ingredients %}
+      <input type="hidden" name="ingredients" value="{{ ing }}">
+    {% endfor %}
+
+    <h2>Choisis le mode de cuisson :</h2>
+    {% for c in cuissons %}
+      <label>
+        <input type="radio" name="cuisson" value="{{ c }}" required>
+        {{ ajouter_emoji(c, EMOJIS_CUISSONS) }}
+      </label><br />
+    {% endfor %}
+
+    <button type="submit">Valider la cuisson</button>
+  </form>
+</body>
+</html>
